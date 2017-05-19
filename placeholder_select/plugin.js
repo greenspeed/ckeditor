@@ -53,7 +53,9 @@ CKEDITOR.plugins.add('placeholder_select',
 				this.startGroup( "Insert placeholder" );
 				for (var i in placeholders)
 				{
-					this.add(placeholders[i][0], placeholders[i][1], placeholders[i][2]);
+					if ( Object.prototype.toString.call( placeholders[i] ) === '[object Array]' ) {
+						this.add(placeholders[i][0], placeholders[i][1], placeholders[i][2]);
+					}
 				}
 			},
 
